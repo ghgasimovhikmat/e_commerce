@@ -3,27 +3,21 @@ using Microsoft.EntityFrameworkCore;
 
 using Infrastructure.Data;
 using Core.Interfaces;
+using e_commerce.API.Middleware;
+using e_commerce.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddApplicationServices(builder.Configuration);
 
-builder.Services.AddDbContext<StoreContext>(options =>
-{
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped( typeof(IGenericRepository<>),typeof(GenericRepository<>));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline. 
+// Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -31,7 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseStaticFiles();
 
 app.UseAuthorization();
