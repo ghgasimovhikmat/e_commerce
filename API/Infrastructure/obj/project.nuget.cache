@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gvbNWY69+DGYIcV0BKdGmjPyoJH0y9HPcHyGrfF4GoFBcR4nUiMnKPHRqtbZ9+AjymmgV9UE76Eli0mV5dT6Tw==",
+  "dgSpecHash": "Lq/o8S7Fe3DChWYuoSpwtmC90KBWRJsbsHOpbFsGOY+x74QN1+wzH3lI3l+fcmkn1MGrdIL/xRw5VPN6UqBD8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ghgas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ghgas\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",

@@ -2028,11 +2028,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\e-commerce.API\\e-commerce.API.csproj",
+      "projectUniqueName": "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\e-commerce.API\\e-commerce.API.csproj",
       "projectName": "e-commerce.API",
-      "projectPath": "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\e-commerce.API\\e-commerce.API.csproj",
+      "projectPath": "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\e-commerce.API\\e-commerce.API.csproj",
       "packagesPath": "C:\\Users\\ghgas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\e-commerce.API\\obj\\",
+      "outputPath": "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\e-commerce.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ghgas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2049,8 +2049,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\ghgas\\source\\repos\\e-commerce\\API\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\ghgas\\source\\repos\\e_commerce\\API\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
