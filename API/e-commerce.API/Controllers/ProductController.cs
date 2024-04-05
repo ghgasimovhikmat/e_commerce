@@ -8,6 +8,7 @@ using Core.Interfaces;
 using Core.Specifications;
 using AutoMapper;
 using e_commerce.API.Dtos;
+using e_commerce.API.Helpers;
 
 namespace e_commerce.API.Controllers
 {
@@ -32,13 +33,21 @@ namespace e_commerce.API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts(string sort)
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery] ProductSpecParams productPrams)
         {
-            var spec = new ProductWithTypesAndBrandsSpecification(sort);
+            // var spec = new ProductWithTypesAndBrandsSpecification(sort, brandId, typeId);
+            var spec = new ProductWithTypesAndBrandsSpecification(productPrams);
 
+            var countSpec = new ProductWithWiltersForCountSpecification(productPrams);
+
+            var totalItems = await _productRepository.CountAsync(countSpec);
             var products = await _productRepository.ListAsync(spec);
 
-            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+            var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+
+
+
+            return Ok(new Pagination<ProductToReturnDto>(productPrams.PageIndex, productPrams.PageSize, totalItems, data));
         }
 
         [HttpGet("{id}")]
